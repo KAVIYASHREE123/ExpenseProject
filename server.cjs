@@ -95,10 +95,10 @@ const bodyParser = require('body-parser')
 const {ObjectId} = require('mongodb')
 // Importing required functions from dbConnection.cjs
 const {connectToDb, getDb} = require('./dbconnections.cjs')
-
+const cors=require('cors')
 const app = express()
 app.use(bodyParser.json())
-
+app.use(cors())
 let db
 connectToDb(function(error) {
     if(error) {
